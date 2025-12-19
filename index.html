@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampusVibe - The ultimate college event discovery platform. Discover amazing events, connect with clubs, and never miss out on campus life.">
+    <title>CampusVibe | College Event Discovery Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">CampusVibe</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#clubs">Top Clubs</a></li>
+                <li><a href="#register" class="nav-btn">Register Club</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span>🎉 100+ Events Happening This Week</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Discover</span>
+                <span class="title-line gradient-text">Campus Events</span>
+                <span class="title-line">Like Never Before</span>
+            </h1>
+            <p class="hero-subtitle">
+                One platform. Every club. All events. Never miss what matters on your campus.
+            </p>
+            <div class="hero-cta">
+                <a href="#events" class="btn btn-primary glow-btn">
+                    <span>Explore Events</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#register" class="btn btn-secondary">
+                    <span>Register Your Club</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="250">0</span>
+                    <span class="stat-label">Active Clubs</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1500">0</span>
+                    <span class="stat-label">Events Hosted</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50000">0</span>
+                    <span class="stat-label">Students Connected</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-cards">
+                <div class="event-card card-1">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <span class="card-tag">Tech</span>
+                        <span class="card-date">Dec 25</span>
+                    </div>
+                    <h3>Hackathon 2025</h3>
+                    <p>48-hour coding marathon</p>
+                    <div class="card-footer">
+                        <div class="attendees">
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <span>+120</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card card-2">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <span class="card-tag music">Music</span>
+                        <span class="card-date">Dec 28</span>
+                    </div>
+                    <h3>Winter Concert</h3>
+                    <p>Annual music festival</p>
+                    <div class="card-footer">
+                        <div class="attendees">
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <span>+350</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card card-3">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <span class="card-tag sports">Sports</span>
+                        <span class="card-date">Jan 5</span>
+                    </div>
+                    <h3>Inter-College Cup</h3>
+                    <p>Football championship</p>
+                    <div class="card-footer">
+                        <div class="attendees">
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <span>+500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">The Problem</span>
+                <h2>Why <span class="gradient-text">CampusVibe</span>?</h2>
+            </div>
+            <div class="why-grid">
+                <div class="problem-card reveal">
+                    <div class="problem-icon">😵</div>
+                    <h3>Information Overload</h3>
+                    <p>Events scattered across WhatsApp groups, Instagram, and notice boards. You always miss what matters.</p>
+                </div>
+                <div class="solution-arrow reveal">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <path d="M10 30h40M40 20l10 10-10 10" stroke="url(#arrowGrad)" stroke-width="3" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#8B5CF6"/>
+                                <stop offset="100%" stop-color="#06B6D4"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="solution-card reveal">
+                    <div class="solution-icon">✨</div>
+                    <h3>One Unified Hub</h3>
+                    <p>All campus events, all clubs, one beautiful platform. Filter, discover, and RSVP in seconds.</p>
+                </div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">🎯</div>
+                    <span>Personalized Feed</span>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">⚡</div>
+                    <span>Real-time Updates</span>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">🔔</div>
+                    <span>Smart Reminders</span>
+                </div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">📊</div>
+                    <span>Club Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Features</span>
+                <h2>Everything You Need,<br><span class="gradient-text">Nothing You Don't</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal" data-tilt>
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Event Tracking</h3>
+                    <p>Never miss an event again. Get instant notifications when new events drop.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card reveal" data-tilt>
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon purple">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Club Dashboard</h3>
+                    <p>Powerful tools for clubs to manage events, track RSVPs, and grow their community.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card reveal" data-tilt>
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon pink">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Leaderboard & Rankings</h3>
+                    <p>Compete with other clubs. Climb the ranks and become the most popular club on campus.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card reveal" data-tilt>
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon cyan">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Calendar Sync</h3>
+                    <p>Sync events directly to your calendar. Never double-book or miss a deadline again.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card reveal" data-tilt>
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon orange">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Community Forums</h3>
+                    <p>Connect with fellow students, discuss events, and build lasting relationships.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="feature-card reveal" data-tilt>
+                    <div class="feature-glow"></div>
+                    <div class="feature-icon green">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Verified Events</h3>
+                    <p>All events are verified by official club representatives. 100% legit, 0% FOMO.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Clubs Section -->
+    <section class="clubs-section" id="clubs">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Leaderboard</span>
+                <h2>Top Performing <span class="gradient-text">Clubs</span></h2>
+                <p class="section-desc">The most active and engaging clubs on campus right now</p>
+            </div>
+            <div class="clubs-leaderboard">
+                <div class="club-rank rank-2 reveal">
+                    <div class="rank-badge silver">2</div>
+                    <div class="club-card">
+                        <div class="club-avatar">🎭</div>
+                        <h4>Drama Society</h4>
+                        <div class="club-stats">
+                            <span class="events-count">45 Events</span>
+                            <span class="members-count">680 Members</span>
+                        </div>
+                        <div class="club-score">
+                            <span class="score-value">8,540</span>
+                            <span class="score-label">XP Points</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="club-rank rank-1 reveal">
+                    <div class="rank-badge gold">👑</div>
+                    <div class="club-card featured">
+                        <div class="crown-glow"></div>
+                        <div class="club-avatar">💻</div>
+                        <h4>Tech Club</h4>
+                        <div class="club-stats">
+                            <span class="events-count">72 Events</span>
+                            <span class="members-count">1.2K Members</span>
+                        </div>
+                        <div class="club-score">
+                            <span class="score-value">12,850</span>
+                            <span class="score-label">XP Points</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="club-rank rank-3 reveal">
+                    <div class="rank-badge bronze">3</div>
+                    <div class="club-card">
+                        <div class="club-avatar">🎨</div>
+                        <h4>Art Collective</h4>
+                        <div class="club-stats">
+                            <span class="events-count">38 Events</span>
+                            <span class="members-count">420 Members</span>
+                        </div>
+                        <div class="club-score">
+                            <span class="score-value">6,320</span>
+                            <span class="score-label">XP Points</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clubs-cta reveal">
+                <span>Want to see your club on top?</span>
+                <a href="#register" class="btn btn-outline">View Full Rankings</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="register">
+        <div class="cta-glow"></div>
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Ready to <span class="gradient-text">Elevate</span> Your Club?</h2>
+                <p>Join 250+ clubs already on CampusVibe. Free registration, premium exposure.</p>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>Free Forever</span>
+                    </div>
+                    <div class="cta-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>5 Min Setup</span>
+                    </div>
+                    <div class="cta-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>Instant Reach</span>
+                    </div>
+                </div>
+                <form class="register-form" id="registerForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Club Name" required>
+                        <input type="email" placeholder="Official Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary glow-btn large">
+                        <span>Register Your Club</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">CampusVibe</span>
+                    </a>
+                    <p>Connecting students with the events that matter.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Platform</h4>
+                        <a href="#">Browse Events</a>
+                        <a href="#">Discover Clubs</a>
+                        <a href="#">Leaderboard</a>
+                        <a href="#">Calendar</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>For Clubs</h4>
+                        <a href="#">Register</a>
+                        <a href="#">Dashboard</a>
+                        <a href="#">Analytics</a>
+                        <a href="#">Promote</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CampusVibe. Built with 💜 for students, by students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
