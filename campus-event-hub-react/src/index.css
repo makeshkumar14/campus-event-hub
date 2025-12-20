@@ -1794,8 +1794,15 @@ html::-webkit-scrollbar {
 .poster-content h3 {
   font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: var(--text-primary);
+}
+
+.poster-club {
+  font-size: 0.9rem;
+  color: var(--accent-purple);
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .poster-date,

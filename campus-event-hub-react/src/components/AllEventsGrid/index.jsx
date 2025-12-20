@@ -31,6 +31,7 @@ const AllEventsGrid = () => {
               </div>
               <div className="poster-content">
                 <h3>{event.title}</h3>
+                <p className="poster-club">🏛️ {event.club}</p>
                 <p className="poster-date">📅 {event.date}, 2025</p>
                 <p className="poster-location">📍 {event.venue}</p>
                 <div className="poster-meta">

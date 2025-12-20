@@ -7,7 +7,8 @@ export const events = [
     date: "Dec 25-26",
     venue: "Tech Arena, Block A",
     image: "/images/hackfest_poster_1766237981164.png",
-    attendees: 120
+    attendees: 120,
+    club: "CodeCraft Labs"
   },
   {
     id: 2,
@@ -16,7 +17,8 @@ export const events = [
     date: "Dec 28",
     venue: "Main Stage, Open Air",
     image: "/images/music_fest_poster_1766238003180.png",
-    attendees: 350
+    attendees: 350,
+    club: "Harmonic Vibes Society"
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const events = [
     date: "Jan 5-10",
     venue: "Central Stadium",
     image: "/images/sports_poster_1766238022728.png",
-    attendees: 500
+    attendees: 500,
+    club: "Champions League Alliance"
   },
   {
     id: 4,
@@ -34,7 +37,8 @@ export const events = [
     date: "Jan 12",
     venue: "Gallery Hall, Block C",
     image: "/images/art_expo_poster_1766238044100.png",
-    attendees: 200
+    attendees: 200,
+    club: "Visionary Canvas Collective"
   },
   {
     id: 5,
@@ -43,7 +47,8 @@ export const events = [
     date: "Jan 15",
     venue: "Main Auditorium",
     image: "/images/drama_fest_poster_1766238059958.png",
-    attendees: 180
+    attendees: 180,
+    club: "The Spotlight Ensemble"
   },
   {
     id: 6,
@@ -52,14 +57,15 @@ export const events = [
     date: "Jan 20",
     venue: "Main Stage, Open Air",
     image: "/images/dance_fest_poster_1766238085199.png",
-    attendees: 300
+    attendees: 300,
+    club: "Rhythm Revolution Crew"
   }
 ];
 
 export const clubs = [
   {
     id: 1,
-    name: "Tech Club",
+    name: "CodeCraft Labs",
     avatar: "💻",
     events: 72,
     members: "1.2K",
@@ -68,7 +74,7 @@ export const clubs = [
   },
   {
     id: 2,
-    name: "Drama Society",
+    name: "The Spotlight Ensemble",
     avatar: "🎭",
     events: 45,
     members: "680",
@@ -77,7 +83,7 @@ export const clubs = [
   },
   {
     id: 3,
-    name: "Art Collective",
+    name: "Visionary Canvas Collective",
     avatar: "🎨",
     events: 38,
     members: "420",
