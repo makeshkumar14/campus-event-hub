@@ -1932,6 +1932,26 @@ html::-webkit-scrollbar {
   background: var(--gradient-primary);
   transition: width 0.1s ease-out;
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
+  position: relative;
+  overflow: visible;
+}
+
+.scroll-emoji {
+  position: absolute;
+  right: -10px;
+  top: -6px;
+  font-size: 16px;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));
+  z-index: 10000;
+}
+
+@keyframes rocketPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 /* ============================================

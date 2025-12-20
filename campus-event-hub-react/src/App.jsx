@@ -63,9 +63,9 @@ function App() {
       <Hero />
       <EventsSlider />
       <AllEventsGrid />
-      <WhySection />
-      <FeaturesSection />
       <ClubsSection />
+      <FeaturesSection />
+      <WhySection />
       <CTASection />
       <Footer />
     </>
