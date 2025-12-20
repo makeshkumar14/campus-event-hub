@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import Navbar from './components/Navbar';
+import ScrollProgress from './components/ScrollProgress';
 import Hero from './components/Hero';
 import EventsSlider from './components/EventsSlider';
 import AllEventsGrid from './components/AllEventsGrid';
@@ -57,6 +58,7 @@ function App() {
   return (
     <>
       <BackgroundAnimation />
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <EventsSlider />
