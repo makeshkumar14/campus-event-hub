@@ -1530,3 +1530,378 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #7c4fe0;
 }
+
+/* ============================================
+   Dynamic Events Slider Section
+   ============================================ */
+.events-slider-section {
+  padding: 100px 0 60px;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.slider-container::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 100%);
+}
+
+.slider-container::after {
+  right: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--bg-primary) 100%);
+}
+
+.slider-track {
+  display: flex;
+  gap: 30px;
+  animation: infiniteScroll 30s linear infinite;
+  width: max-content;
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.poster-card {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.poster-card:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+}
+
+.poster-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.poster-card:hover img {
+  transform: scale(1.1);
+}
+
+.poster-glow {
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-primary);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.poster-card:hover .poster-glow {
+  opacity: 1;
+}
+
+.poster-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    transparent 100%
+  );
+  transform: translateY(100%);
+  transition: transform var(--transition-medium);
+}
+
+.poster-card:hover .poster-overlay {
+  transform: translateY(0);
+}
+
+.poster-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.poster-tag.tech {
+  background: rgba(139, 92, 246, 0.3);
+  color: var(--accent-purple);
+}
+
+.poster-tag.music {
+  background: rgba(236, 72, 153, 0.3);
+  color: var(--accent-pink);
+}
+
+.poster-tag.sports {
+  background: rgba(6, 182, 212, 0.3);
+  color: var(--accent-cyan);
+}
+
+.poster-tag.art {
+  background: rgba(249, 115, 22, 0.3);
+  color: var(--accent-orange);
+}
+
+.poster-tag.drama {
+  background: rgba(220, 38, 38, 0.3);
+  color: #f87171;
+}
+
+.poster-tag.dance {
+  background: rgba(16, 185, 129, 0.3);
+  color: var(--accent-green);
+}
+
+.poster-overlay h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+.poster-overlay p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   All Events Static Grid Section
+   ============================================ */
+.all-events-section {
+  padding: 80px 0 120px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.event-poster-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  transition: all var(--transition-medium);
+}
+
+.event-poster-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+}
+
+.poster-image {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.poster-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.event-poster-card:hover .poster-image img {
+  transform: scale(1.1);
+}
+
+.poster-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.poster-badge.tech {
+  background: rgba(139, 92, 246, 0.9);
+  color: white;
+}
+
+.poster-badge.music {
+  background: rgba(236, 72, 153, 0.9);
+  color: white;
+}
+
+.poster-badge.sports {
+  background: rgba(6, 182, 212, 0.9);
+  color: white;
+}
+
+.poster-badge.art {
+  background: rgba(249, 115, 22, 0.9);
+  color: white;
+}
+
+.poster-badge.drama {
+  background: rgba(220, 38, 38, 0.9);
+  color: white;
+}
+
+.poster-badge.dance {
+  background: rgba(16, 185, 129, 0.9);
+  color: white;
+}
+
+.poster-content {
+  padding: 24px;
+}
+
+.poster-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.poster-date,
+.poster-location {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.poster-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.attendees-count {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+.btn-register {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--gradient-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all var(--transition-medium);
+}
+
+.btn-register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Responsive Styles for Events Sections */
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .poster-card {
+    width: 260px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .events-slider-section {
+    padding: 80px 0 40px;
+  }
+
+  .slider-container::before,
+  .slider-container::after {
+    width: 100px;
+  }
+
+  .poster-card {
+    width: 220px;
+    height: 300px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .poster-image {
+    height: 280px;
+  }
+
+  .poster-content {
+    padding: 20px;
+  }
+
+  .poster-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-card {
+    width: 180px;
+    height: 250px;
+  }
+
+  .slider-track {
+    gap: 20px;
+  }
+
+  .poster-image {
+    height: 240px;
+  }
+
+  .poster-meta {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .btn-register {
+    width: 100%;
+    text-align: center;
+  }
+}

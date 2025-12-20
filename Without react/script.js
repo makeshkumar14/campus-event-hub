@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initFormHandler();
   initTiltEffect();
+  initEventsSlider();
 });
 
 /**
@@ -430,5 +431,27 @@ window.addEventListener(
     // Additional scroll handlers can go here
   }, 10)
 );
+
+/**
+ * Events Slider - Pause on hover functionality
+ */
+function initEventsSlider() {
+  const sliderTrack = document.querySelector('.slider-track');
+  
+  if (!sliderTrack) return;
+  
+  // The hover pause is handled by CSS, but we can add additional functionality
+  
+  // Clone cards for seamless infinite scroll (already done in HTML, but this ensures it works)
+  const cards = sliderTrack.querySelectorAll('.poster-card');
+  
+  // Add click functionality to cards
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Navigate to event details (placeholder)
+      console.log('Event card clicked:', card.querySelector('h4')?.textContent);
+    });
+  });
+}
 
 console.log("🚀 CampusVibe loaded successfully!");
