@@ -1566,9 +1566,7 @@ html::-webkit-scrollbar {
   width: max-content;
 }
 
-.slider-track:hover {
-  animation-play-state: paused;
-}
+/* Slider keeps scrolling on hover - no pause */
 
 @keyframes infiniteScroll {
   0% {
@@ -1633,8 +1631,19 @@ html::-webkit-scrollbar {
     rgba(0, 0, 0, 0.7) 60%,
     transparent 100%
   );
-  transform: translateY(100%);
-  transition: transform var(--transition-medium);
+  transform: translateY(0);
+  animation: fadeInOverlay 1s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .poster-card:hover .poster-overlay {
