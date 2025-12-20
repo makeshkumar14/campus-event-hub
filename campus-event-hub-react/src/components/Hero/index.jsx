@@ -89,55 +89,49 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-visual">
-        <div className="floating-cards">
-          <div className="event-card card-1">
-            <div className="card-glow"></div>
-            <div className="card-header">
-              <span className="card-tag">Tech</span>
-              <span className="card-date">Dec 25</span>
-            </div>
-            <h3>Hackathon 2025</h3>
-            <p>48-hour coding marathon</p>
-            <div className="card-footer">
-              <div className="attendees">
-                <div className="avatar"></div>
-                <div className="avatar"></div>
-                <div className="avatar"></div>
-                <span>+120</span>
+        <div className="iconic-events-section">
+          <div className="iconic-header">
+            <span className="iconic-badge pulse-glow">⭐ ICONIC ANNUAL EVENTS</span>
+            <p className="iconic-subtitle">The events that define our campus culture</p>
+          </div>
+          <div className="floating-cards">
+            <div className="iconic-card card-1">
+              <div className="card-glow"></div>
+              <div className="card-ribbon">🔥 LEGENDARY</div>
+              <div className="iconic-card-image">
+                <img src="/images/aaruush_event.png" alt="AARUUSH" />
+              </div>
+              <div className="iconic-card-content">
+                <span className="iconic-tag">🏆 Tech Fest</span>
+                <h3>AARUUSH</h3>
+                <p>National Tech Symposium</p>
+                <span className="iconic-attendance">5000+ Attendees</span>
               </div>
             </div>
-          </div>
-          <div className="event-card card-2">
-            <div className="card-glow"></div>
-            <div className="card-header">
-              <span className="card-tag music">Music</span>
-              <span className="card-date">Dec 28</span>
-            </div>
-            <h3>Winter Concert</h3>
-            <p>Annual music festival</p>
-            <div className="card-footer">
-              <div className="attendees">
-                <div className="avatar"></div>
-                <div className="avatar"></div>
-                <div className="avatar"></div>
-                <span>+350</span>
+            <div className="iconic-card card-2">
+              <div className="card-glow"></div>
+              <div className="card-ribbon">🔥 LEGENDARY</div>
+              <div className="iconic-card-image">
+                <img src="/images/milan_event.png" alt="MILAN" />
+              </div>
+              <div className="iconic-card-content">
+                <span className="iconic-tag music">🎭 Cultural</span>
+                <h3>MILAN</h3>
+                <p>Grand Cultural Festival</p>
+                <span className="iconic-attendance">8000+ Attendees</span>
               </div>
             </div>
-          </div>
-          <div className="event-card card-3">
-            <div className="card-glow"></div>
-            <div className="card-header">
-              <span className="card-tag sports">Sports</span>
-              <span className="card-date">Jan 5</span>
-            </div>
-            <h3>Inter-College Cup</h3>
-            <p>Football championship</p>
-            <div className="card-footer">
-              <div className="attendees">
-                <div className="avatar"></div>
-                <div className="avatar"></div>
-                <div className="avatar"></div>
-                <span>+500</span>
+            <div className="iconic-card card-3">
+              <div className="card-glow"></div>
+              <div className="card-ribbon">🔥 LEGENDARY</div>
+              <div className="iconic-card-image">
+                <img src="/images/texus_event.png" alt="TEXUS" />
+              </div>
+              <div className="iconic-card-content">
+                <span className="iconic-tag">💡 Innovation</span>
+                <h3>TEXUS</h3>
+                <p>Technical Extravaganza</p>
+                <span className="iconic-attendance">4000+ Attendees</span>
               </div>
             </div>
           </div>

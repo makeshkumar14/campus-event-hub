@@ -495,7 +495,7 @@ body {
 .floating-cards {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 650px;
   perspective: 1000px;
 }
 
@@ -531,22 +531,22 @@ body {
 }
 
 .card-1 {
-  top: 50px;
-  left: 10%;
+  top: 0;
+  left: 5%;
   animation: floatCard1 6s ease-in-out infinite;
   z-index: 3;
 }
 
 .card-2 {
-  top: 80px;
-  right: 5%;
+  top: 30px;
+  right: 0;
   animation: floatCard2 7s ease-in-out infinite;
   z-index: 2;
 }
 
 .card-3 {
-  bottom: 50px;
-  left: 25%;
+  top: 320px;
+  left: 20%;
   animation: floatCard3 8s ease-in-out infinite;
   z-index: 1;
 }
@@ -574,10 +574,10 @@ body {
 @keyframes floatCard3 {
   0%,
   100% {
-    transform: translateY(0) rotate(-1deg);
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-15px) rotate(2deg);
+    transform: translateY(-10px) rotate(1deg);
   }
 }
 
@@ -1918,3 +1918,236 @@ html::-webkit-scrollbar {
   box-shadow: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
 }
 
+/* ============================================
+   Iconic Event Cards (Hero Section)
+   ============================================ */
+.iconic-card {
+  position: absolute;
+  width: 280px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.iconic-card:hover {
+  transform: translateY(-20px) scale(1.15) !important;
+  border-color: rgba(139, 92, 246, 0.8);
+  box-shadow: 
+    0 30px 60px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(236, 72, 153, 0.3);
+  z-index: 100 !important;
+  animation: none !important;
+}
+
+.iconic-card:hover .card-glow {
+  opacity: 0.6;
+}
+
+.iconic-card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.iconic-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--transition-slow);
+}
+
+.iconic-card:hover .iconic-card-image img {
+  transform: scale(1.1);
+}
+
+.iconic-card-content {
+  padding: 16px;
+}
+
+.iconic-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--accent-purple);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.iconic-tag.music {
+  background: rgba(236, 72, 153, 0.2);
+  color: var(--accent-pink);
+}
+
+.iconic-tag.sports {
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--accent-cyan);
+}
+
+.iconic-card-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.iconic-card-content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.iconic-attendance {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+/* ============================================
+   Iconic Events Header & Enhancements
+   ============================================ */
+.iconic-events-section {
+  position: relative;
+  width: 100%;
+}
+
+.iconic-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.iconic-badge {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #8B5CF6, #EC4899, #06B6D4);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.6),
+    0 0 40px rgba(236, 72, 153, 0.4),
+    0 0 60px rgba(6, 182, 212, 0.2);
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(139, 92, 246, 0.6),
+      0 0 40px rgba(236, 72, 153, 0.4),
+      0 0 60px rgba(6, 182, 212, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(139, 92, 246, 0.8),
+      0 0 60px rgba(236, 72, 153, 0.6),
+      0 0 90px rgba(6, 182, 212, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+.iconic-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Card Ribbon */
+.card-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -35px;
+  background: linear-gradient(135deg, #EC4899, #8B5CF6);
+  color: white;
+  padding: 6px 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  transform: rotate(45deg);
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.5);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background: linear-gradient(135deg, #EC4899, #8B5CF6);
+  }
+  50% {
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+  }
+}
+
+/* Enhanced Card Glow */
+.iconic-card .card-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  background: linear-gradient(45deg, #8B5CF6, #EC4899, #06B6D4, #8B5CF6);
+  background-size: 400% 400%;
+  opacity: 0.5;
+  filter: blur(15px);
+  z-index: -1;
+  animation: gradientBorder 4s ease infinite;
+}
+
+@keyframes gradientBorder {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.iconic-card:hover .card-glow {
+  opacity: 0.8;
+  filter: blur(20px);
+}
+
+/* Gradient border on cards */
+.iconic-card {
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.iconic-card:hover {
+  border-color: rgba(139, 92, 246, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .iconic-card {
+    position: static;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 20px;
+  }
+
+  .iconic-card-image {
+    height: 140px;
+  }
+
+  .iconic-badge {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+
+  .card-ribbon {
+    font-size: 0.6rem;
+    right: -40px;
+  }
+}
