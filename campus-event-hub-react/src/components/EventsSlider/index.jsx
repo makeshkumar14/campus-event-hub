@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { events } from '../../data/eventsData';
 
 const EventsSlider = () => {
@@ -18,7 +19,7 @@ const EventsSlider = () => {
       <div className="slider-container">
         <div className="slider-track">
           {duplicatedEvents.map((event, index) => (
-            <div className="poster-card" key={`${event.id}-${index}`}>
+            <Link to={`/event/${event.id}`} className="poster-card" key={`${event.id}-${index}`}>
               <div className="poster-glow"></div>
               <img src={event.image} alt={event.title} />
               <div className="poster-overlay">
@@ -28,7 +29,7 @@ const EventsSlider = () => {
                 <h4>{event.title}</h4>
                 <p>{event.date} • {event.venue.split(',')[0]}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -37,3 +38,4 @@ const EventsSlider = () => {
 };
 
 export default EventsSlider;
+

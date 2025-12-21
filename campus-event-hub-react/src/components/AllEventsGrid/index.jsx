@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { events } from '../../data/eventsData';
 
 const categoryEmojis = {
@@ -36,7 +37,7 @@ const AllEventsGrid = () => {
                 <p className="poster-location">📍 {event.venue}</p>
                 <div className="poster-meta">
                   <span className="attendees-count">🎟️ {event.attendees}+ Registered</span>
-                  <a href="#" className="btn-register">Register</a>
+                  <Link to={`/event/${event.id}`} className="btn-register">Register</Link>
                 </div>
               </div>
             </div>
@@ -48,3 +49,4 @@ const AllEventsGrid = () => {
 };
 
 export default AllEventsGrid;
+

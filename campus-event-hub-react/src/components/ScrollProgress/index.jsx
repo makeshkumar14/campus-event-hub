@@ -19,9 +19,7 @@ const ScrollProgress = () => {
       <div 
         className="scroll-progress-bar" 
         style={{ width: `${scrollProgress}%` }}
-      >
-        <span className="scroll-emoji">🚀</span>
-      </div>
+      />
     </div>
   );
 };
