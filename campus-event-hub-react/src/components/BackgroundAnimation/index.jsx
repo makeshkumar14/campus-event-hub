@@ -36,6 +36,25 @@ const BackgroundAnimation = () => {
       <div className="gradient-orb orb-1"></div>
       <div className="gradient-orb orb-2"></div>
       <div className="gradient-orb orb-3"></div>
+      <div className="gradient-orb orb-4"></div>
+      <div className="gradient-orb orb-5"></div>
+      <div className="floating-line line-1"></div>
+      <div className="floating-line line-2"></div>
+      <div className="floating-line line-3"></div>
+      <div className="shooting-stars">
+        <div className="shooting-star star-1"></div>
+        <div className="shooting-star star-2"></div>
+        <div className="shooting-star star-3"></div>
+        <div className="shooting-star star-4"></div>
+        <div className="shooting-star star-5"></div>
+        <div className="shooting-star star-6"></div>
+        <div className="shooting-star star-7"></div>
+        <div className="shooting-star star-8"></div>
+        <div className="shooting-star star-9"></div>
+        <div className="shooting-star star-10"></div>
+        <div className="shooting-star star-11"></div>
+        <div className="shooting-star star-12"></div>
+      </div>
       <div className="particles" id="particles"></div>
     </div>
   );

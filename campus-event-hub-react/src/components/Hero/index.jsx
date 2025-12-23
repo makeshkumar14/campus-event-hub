@@ -1,4 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const heroImages = [
+  '/images/hero-slide-1.jpg',
+  '/images/hero-slide-2.jpg',
+  '/images/hero-slide-4.jpg',
+  '/images/hero-slide-5.jpg',
+];
 
 const StatNumber = ({ target, label }) => {
   const ref = useRef(null);
@@ -54,13 +61,50 @@ const StatNumber = ({ target, label }) => {
 };
 
 const Hero = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all images
+  useEffect(() => {
+    const loadImages = heroImages.map((src) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    });
+
+    Promise.all(loadImages).then(() => {
+      setImagesLoaded(true);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!imagesLoaded) return;
+    
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [imagesLoaded]);
+
   return (
     <section className="hero" id="hero">
+      {/* Background Image Slideshow */}
+      <div className="hero-slideshow">
+        {heroImages.map((img, index) => (
+          <div
+            key={index}
+            className={`hero-slide ${index === currentImage ? 'active' : ''}`}
+            style={{ backgroundImage: `url(${img})` }}
+          />
+        ))}
+        <div className="hero-overlay" />
+      </div>
+
       <div className="hero-content">
-        <div className="hero-badge">
-          <span className="pulse-dot"></span>
-          <span>🎉 100+ Events Happening This Week</span>
-        </div>
         <h1 className="hero-title">
           <span className="title-line">Discover</span>
           <span className="title-line gradient-text">Campus Events</span>
@@ -86,55 +130,6 @@ const Hero = () => {
           <StatNumber target={1500} label="Events Hosted" />
           <div className="stat-divider"></div>
           <StatNumber target={50000} label="Students Connected" />
-        </div>
-      </div>
-      <div className="hero-visual">
-        <div className="iconic-events-section">
-          <div className="iconic-header">
-            <span className="iconic-badge pulse-glow">⭐ ICONIC ANNUAL EVENTS</span>
-            <p className="iconic-subtitle">The events that define our campus culture</p>
-          </div>
-          <div className="floating-cards">
-            <div className="iconic-card card-1">
-              <div className="card-glow"></div>
-              <div className="card-ribbon">🔥 LEGENDARY</div>
-              <div className="iconic-card-image">
-                <img src="/images/aaruush_event.png" alt="AARUUSH" />
-              </div>
-              <div className="iconic-card-content">
-                <span className="iconic-tag">🏆 Tech Fest</span>
-                <h3>AARUUSH</h3>
-                <p>National Tech Symposium</p>
-                <span className="iconic-attendance">5000+ Attendees</span>
-              </div>
-            </div>
-            <div className="iconic-card card-2">
-              <div className="card-glow"></div>
-              <div className="card-ribbon">🔥 LEGENDARY</div>
-              <div className="iconic-card-image">
-                <img src="/images/milan_event.png" alt="MILAN" />
-              </div>
-              <div className="iconic-card-content">
-                <span className="iconic-tag music">🎭 Cultural</span>
-                <h3>MILAN</h3>
-                <p>Grand Cultural Festival</p>
-                <span className="iconic-attendance">8000+ Attendees</span>
-              </div>
-            </div>
-            <div className="iconic-card card-3">
-              <div className="card-glow"></div>
-              <div className="card-ribbon">🔥 LEGENDARY</div>
-              <div className="iconic-card-image">
-                <img src="/images/texus_event.png" alt="TEXUS" />
-              </div>
-              <div className="iconic-card-content">
-                <span className="iconic-tag">💡 Innovation</span>
-                <h3>TEXUS</h3>
-                <p>Technical Extravaganza</p>
-                <span className="iconic-attendance">4000+ Attendees</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

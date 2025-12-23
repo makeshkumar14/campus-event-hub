@@ -18,7 +18,7 @@ function HomePage() {
   useMouseFollower();
   useParallax();
 
-  // Scroll to hash section when navigating back
+  // Scroll to hash section when navigating back, or scroll to top on reload
   useEffect(() => {
     if (location.hash) {
       const element = document.querySelector(location.hash);
@@ -27,6 +27,9 @@ function HomePage() {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
+    } else {
+      // Scroll to top on page load/reload
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
