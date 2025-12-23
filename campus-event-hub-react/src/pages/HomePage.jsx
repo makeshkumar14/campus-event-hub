@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
 import EventsSlider from '../components/EventsSlider';
 import AllEventsGrid from '../components/AllEventsGrid';
-import WhySection from '../components/WhySection';
-import FeaturesSection from '../components/FeaturesSection';
+
+
 import ClubsSection from '../components/ClubsSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
@@ -12,7 +12,7 @@ import { useScrollReveal, useMouseFollower, useParallax } from '../hooks/useAnim
 
 function HomePage() {
   const location = useLocation();
-  
+
   // Initialize custom hooks
   useScrollReveal();
   useMouseFollower();
@@ -37,7 +37,7 @@ function HomePage() {
   useEffect(() => {
     const initTiltEffect = () => {
       const cards = document.querySelectorAll('[data-tilt]');
-      
+
       cards.forEach((card) => {
         const handleMouseMove = (e) => {
           const rect = card.getBoundingClientRect();
@@ -72,8 +72,8 @@ function HomePage() {
       <EventsSlider />
       <AllEventsGrid />
       <ClubsSection />
-      <FeaturesSection />
-      <WhySection />
+
+
       <CTASection />
       <Footer />
     </>

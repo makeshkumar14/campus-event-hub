@@ -62,8 +62,8 @@ const Navbar = () => {
           <li><a href="#clubs" onClick={(e) => handleNavClick(e, '#clubs')}>Top Clubs</a></li>
           <li><a href="#register" className="nav-btn" onClick={(e) => handleNavClick(e, '#register')}>Register Club</a></li>
         </ul>
-        <div 
-          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`} 
+        <div
+          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           id="hamburger"
           onClick={toggleMobileMenu}
         >

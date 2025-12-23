@@ -15,23 +15,6 @@ const ClubsSection = () => {
           </p>
         </div>
         <div className="clubs-leaderboard">
-          {/* Rank 2 */}
-          <div className="club-rank rank-2 reveal">
-            <div className="rank-badge silver">2</div>
-            <div className="club-card">
-              <div className="club-avatar">{sortedClubs[1]?.avatar}</div>
-              <h4>{sortedClubs[1]?.name}</h4>
-              <div className="club-stats">
-                <span className="events-count">{sortedClubs[1]?.events} Events</span>
-                <span className="members-count">{sortedClubs[1]?.members} Members</span>
-              </div>
-              <div className="club-score">
-                <span className="score-value">{sortedClubs[1]?.xp}</span>
-                <span className="score-label">XP Points</span>
-              </div>
-            </div>
-          </div>
-          
           {/* Rank 1 */}
           <div className="club-rank rank-1 reveal">
             <div className="rank-badge gold">👑</div>
@@ -49,7 +32,24 @@ const ClubsSection = () => {
               </div>
             </div>
           </div>
-          
+
+          {/* Rank 2 */}
+          <div className="club-rank rank-2 reveal">
+            <div className="rank-badge silver">2</div>
+            <div className="club-card">
+              <div className="club-avatar">{sortedClubs[1]?.avatar}</div>
+              <h4>{sortedClubs[1]?.name}</h4>
+              <div className="club-stats">
+                <span className="events-count">{sortedClubs[1]?.events} Events</span>
+                <span className="members-count">{sortedClubs[1]?.members} Members</span>
+              </div>
+              <div className="club-score">
+                <span className="score-value">{sortedClubs[1]?.xp}</span>
+                <span className="score-label">XP Points</span>
+              </div>
+            </div>
+          </div>
+
           {/* Rank 3 */}
           <div className="club-rank rank-3 reveal">
             <div className="rank-badge bronze">3</div>
@@ -68,8 +68,36 @@ const ClubsSection = () => {
           </div>
         </div>
         <div className="clubs-cta reveal">
-          <span>Want to see your club on top?</span>
-          <a href="#register" className="btn btn-outline">View Full Rankings</a>
+          <div className="rankings-graph">
+            <h4>Performance Overview</h4>
+            <div className="bar-chart">
+              {sortedClubs.map((club, index) => {
+                const xpValue = parseInt(club.xp.replace(/,/g, ''));
+                const maxXp = parseInt(sortedClubs[0].xp.replace(/,/g, ''));
+                const percentage = (xpValue / maxXp) * 100;
+
+                return (
+                  <div className="bar-item" key={club.id}>
+                    <div className="bar-container">
+                      <div
+                        className={`bar-fill rank-${index + 1}-bar`}
+                        style={{ height: `${percentage}%` }}
+                      ></div>
+                    </div>
+                    <div className="bar-label">
+                      <span className="bar-avatar">{club.avatar}</span>
+                      <span className="bar-name">{club.name}</span>
+                      <span className="bar-value">{club.xp} XP</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="cta-content-row">
+            <span>Want to see your club on top?</span>
+            <a href="#register" className="btn btn-outline">View Full Rankings</a>
+          </div>
         </div>
       </div>
     </section>
