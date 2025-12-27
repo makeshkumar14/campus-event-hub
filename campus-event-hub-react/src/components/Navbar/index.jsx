@@ -52,15 +52,13 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="nav-container">
         <a href="#" className="logo">
-          <span className="logo-icon">⚡</span>
           <span className="logo-text">CampusVibe</span>
         </a>
         <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`} id="navLinks">
+          <li><a href="#hero" onClick={(e) => handleNavClick(e, '#hero')}>Home</a></li>
           <li><a href="#events" onClick={(e) => handleNavClick(e, '#events')}>Events</a></li>
-          <li><a href="#features" onClick={(e) => handleNavClick(e, '#features')}>Features</a></li>
-          <li><a href="#why" onClick={(e) => handleNavClick(e, '#why')}>Why Us</a></li>
           <li><a href="#clubs" onClick={(e) => handleNavClick(e, '#clubs')}>Top Clubs</a></li>
-          <li><a href="#register" className="nav-btn" onClick={(e) => handleNavClick(e, '#register')}>Register Club</a></li>
+          <li><a href="#register" className="nav-cta-btn" onClick={(e) => handleNavClick(e, '#register')}>Register</a></li>
         </ul>
         <div
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
