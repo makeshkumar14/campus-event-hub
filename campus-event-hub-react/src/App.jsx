@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import ScrollProgress from './components/ScrollProgress';
 import HomePage from './pages/HomePage';
 import EventDetails from './components/EventDetails';
+import ClubRankings from './pages/ClubRankings';
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/event/:id" element={<EventDetails />} />
+        <Route path="/club-rankings" element={<ClubRankings />} />
       </Routes>
     </Router>
   );

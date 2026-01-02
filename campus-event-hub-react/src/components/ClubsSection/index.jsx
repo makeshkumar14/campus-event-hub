@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { clubs } from '../../data/eventsData';
 
 const ClubsSection = () => {
@@ -22,10 +23,6 @@ const ClubsSection = () => {
               <div className="crown-glow"></div>
               <div className="club-avatar">{sortedClubs[0]?.avatar}</div>
               <h4>{sortedClubs[0]?.name}</h4>
-              <div className="club-stats">
-                <span className="events-count">{sortedClubs[0]?.events} Events</span>
-                <span className="members-count">{sortedClubs[0]?.members} Members</span>
-              </div>
               <div className="club-score">
                 <span className="score-value">{sortedClubs[0]?.xp}</span>
                 <span className="score-label">XP Points</span>
@@ -39,10 +36,6 @@ const ClubsSection = () => {
             <div className="club-card">
               <div className="club-avatar">{sortedClubs[1]?.avatar}</div>
               <h4>{sortedClubs[1]?.name}</h4>
-              <div className="club-stats">
-                <span className="events-count">{sortedClubs[1]?.events} Events</span>
-                <span className="members-count">{sortedClubs[1]?.members} Members</span>
-              </div>
               <div className="club-score">
                 <span className="score-value">{sortedClubs[1]?.xp}</span>
                 <span className="score-label">XP Points</span>
@@ -56,10 +49,6 @@ const ClubsSection = () => {
             <div className="club-card">
               <div className="club-avatar">{sortedClubs[2]?.avatar}</div>
               <h4>{sortedClubs[2]?.name}</h4>
-              <div className="club-stats">
-                <span className="events-count">{sortedClubs[2]?.events} Events</span>
-                <span className="members-count">{sortedClubs[2]?.members} Members</span>
-              </div>
               <div className="club-score">
                 <span className="score-value">{sortedClubs[2]?.xp}</span>
                 <span className="score-label">XP Points</span>
@@ -68,35 +57,9 @@ const ClubsSection = () => {
           </div>
         </div>
         <div className="clubs-cta reveal">
-          <div className="rankings-graph">
-            <h4>Performance Overview</h4>
-            <div className="bar-chart">
-              {sortedClubs.map((club, index) => {
-                const xpValue = parseInt(club.xp.replace(/,/g, ''));
-                const maxXp = parseInt(sortedClubs[0].xp.replace(/,/g, ''));
-                const percentage = (xpValue / maxXp) * 100;
-
-                return (
-                  <div className="bar-item" key={club.id}>
-                    <div className="bar-container">
-                      <div
-                        className={`bar-fill rank-${index + 1}-bar`}
-                        style={{ height: `${percentage}%` }}
-                      ></div>
-                    </div>
-                    <div className="bar-label">
-                      <span className="bar-avatar">{club.avatar}</span>
-                      <span className="bar-name">{club.name}</span>
-                      <span className="bar-value">{club.xp} XP</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
           <div className="cta-content-row">
             <span>Want to see your club on top?</span>
-            <a href="#register" className="btn btn-outline">View Full Rankings</a>
+            <Link to="/club-rankings" className="btn btn-outline">View Full Rankings</Link>
           </div>
         </div>
       </div>
@@ -105,3 +68,4 @@ const ClubsSection = () => {
 };
 
 export default ClubsSection;
+
