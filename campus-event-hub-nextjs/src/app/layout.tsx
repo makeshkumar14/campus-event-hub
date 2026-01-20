@@ -4,6 +4,7 @@ import "./globals.css";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import Navbar from "@/components/Navbar";
 import ScrollProgress from "@/components/ScrollProgress";
+import AuthProvider from "@/components/AuthProvider"; // Import the new wrapper
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -13,12 +14,15 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "CampusVibe - Discover Campus Events Like Never Before",
-  description: "One platform. Every club. All events. Never miss what matters on your campus. Join 250+ clubs and 50,000+ students on CampusVibe.",
-  keywords: "campus events, college events, club events, student events, event discovery, campus life",
+  description:
+    "One platform. Every club. All events. Never miss what matters on your campus. Join 250+ clubs and 50,000+ students on CampusVibe.",
+  keywords:
+    "campus events, college events, club events, student events, event discovery, campus life",
   authors: [{ name: "CampusVibe" }],
   openGraph: {
     title: "CampusVibe - Discover Campus Events",
-    description: "One platform. Every club. All events. Never miss what matters on your campus.",
+    description:
+      "One platform. Every club. All events. Never miss what matters on your campus.",
     type: "website",
   },
 };
@@ -31,10 +35,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={outfit.variable}>
-        <BackgroundAnimation />
-        <ScrollProgress />
-        <Navbar />
-        {children}
+        <AuthProvider>
+          <BackgroundAnimation />
+          <ScrollProgress />
+          <Navbar />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
