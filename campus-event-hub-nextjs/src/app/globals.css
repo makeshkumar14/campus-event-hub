@@ -4911,6 +4911,22 @@ html::-webkit-scrollbar {
   color: var(--text-secondary);
 }
 
+.label-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label-with-icon svg {
+  color: var(--accent-purple);
+  transition: all 0.3s ease;
+}
+
+.form-group:hover .label-with-icon svg {
+  color: var(--accent-pink);
+  transform: scale(1.1);
+}
+
 .form-input,
 .form-select,
 .form-textarea {
