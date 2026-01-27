@@ -11,7 +11,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 enum ROLES {
@@ -21,23 +20,41 @@ enum ROLES {
 }
 
 model Club {
-  id     Int     @id @default(autoincrement())
-  name   String
-  xp     Int     @default(0)
-  avatar String?
-  events Event[]
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String?
+  description String?
+  logo        String?
+  email       String?
+  phone       String?
+  advisor     String?
+  instagram   String?
+  linkedin    String?
+  website     String?
+  xp          Int      @default(0)
+  createdAt   DateTime @default(now())
+  events      Event[]
 }
 
 model Event {
-  id          Int      @id @default(autoincrement())
-  title       String
-  date        DateTime
-  category    String
-  clubId      Int
-  club        Club     @relation(fields: [clubId], references: [id])
-  venue       String
-  description String
-  image       String?
+  id           Int       @id @default(autoincrement())
+  title        String
+  date         DateTime
+  time         String?
+  duration     String?
+  category     String
+  clubId       Int
+  club         Club      @relation(fields: [clubId], references: [id])
+  venue        String
+  capacity     Int?
+  deadline     DateTime?
+  description  String
+  image        String?
+  organizer    String?
+  orgEmail     String?
+  requirements String?
+  highlights   String?
+  createdAt    DateTime  @default(now())
 }
 
 model User {

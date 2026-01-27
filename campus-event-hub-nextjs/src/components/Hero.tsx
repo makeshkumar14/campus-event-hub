@@ -127,7 +127,7 @@ const Hero = () => {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-          <a href="#register" className="btn btn-secondary">
+          <a href="/enroll-club" className="btn btn-secondary">
             <span>Register Your Club</span>
           </a>
         </div>

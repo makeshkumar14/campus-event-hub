@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import EventsSlider from '@/components/EventsSlider';
 import AllEventsGrid from '@/components/AllEventsGrid';
 import ClubsSection from '@/components/ClubsSection';
-import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { useScrollReveal, useMouseFollower, useParallax } from '@/hooks/useAnimations';
 
@@ -56,10 +55,10 @@ const HomePageContent = () => {
       <EventsSlider />
       <AllEventsGrid />
       <ClubsSection />
-      <CTASection />
       <Footer />
     </>
   );
 };
 
 export default HomePageContent;
+

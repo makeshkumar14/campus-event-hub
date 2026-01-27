@@ -136,13 +136,20 @@ const Navbar = () => {
           {/* --- AUTHENTICATION LOGIC END --- */}
 
           <li>
-            <a
-              href="#register"
+            <Link
+              href="/enroll-event"
+              className="nav-btn-secondary create-event-btn"
+            >
+              + Event
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/enroll-club"
               className="nav-btn register-btn"
-              onClick={(e) => handleNavClick(e, "#register")}
             >
               Register Club
-            </a>
+            </Link>
           </li>
         </ul>
 
